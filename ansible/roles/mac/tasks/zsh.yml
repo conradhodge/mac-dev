@@ -1,0 +1,21 @@
+---
+- name: Setup the zshrc template
+  copy:
+    src: zshrc
+    dest: $HOME/.zshrc
+    mode: 0644
+    force: no
+
+- name: Install oh-my-zsh
+  shell: sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+  args:
+    creates: $HOME/.oh-my-zsh
+
+- name: Copy zsh theme over
+  copy:
+    src: zshmonstertheme.zsh-theme
+    dest: ~/.oh-my-zsh/custom/themes
+    mode: 0644
+    force: yes
+
+

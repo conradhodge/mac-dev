@@ -1,0 +1,6 @@
+---
+- name: Add node@16 path to zshrc
+  lineinfile:
+    path: "$HOME/.zshrc"
+    line: 'export PATH="/usr/local/opt/node@16/bin:${PATH}"'
+    state: present

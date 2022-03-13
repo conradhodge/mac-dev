@@ -1,0 +1,33 @@
+---
+brew_taps:
+  - aws/tap
+
+brew_packages:
+  - awscli
+  - azure-cli
+  - cowsay
+  - curl
+  - git
+  - github/gh/gh
+  - gnu-sed
+  - go
+  - jq
+  - node@16
+  - shellcheck
+  - terraform
+  - terragrunt
+  - tflint
+  - vim
+  - wget
+  - xmlstarlet
+  - yq
+
+brew_casks:
+  - dotnet-sdk
+  - visual-studio-code
+
+node_packages:
+  - aws-cdk
+  - typescript
+
+python_version: 3.7.7

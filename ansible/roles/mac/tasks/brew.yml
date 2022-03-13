@@ -1,0 +1,24 @@
+---
+- name: Update homebrew and all packages
+  homebrew:
+    update_homebrew: yes
+    upgrade_all: yes
+
+- name: Tap homebrew repositories
+  homebrew_tap:
+    name: "{{ brew_taps }}"
+    state: present
+
+- name: Install homebrew packages # noqa 403
+  homebrew:
+    name: "{{ brew_packages }}"
+    state: latest
+
+- name: Install/upgrade homebrew casks
+  homebrew_cask:
+    name: "{{ brew_casks }}"
+    state: upgraded
+    install_options: force
+
+- name: Cleanup any old brew packages not in use # noqa 301
+  command: brew cleanup
